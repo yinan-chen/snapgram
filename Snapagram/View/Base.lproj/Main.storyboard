@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fIf-8z-6kb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fIf-8z-6kb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -252,16 +252,76 @@
         <!--Snap-->
         <scene sceneID="TFg-EA-sNv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fub-9A-ORI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="qJC-UZ-mXh" customClass="CameraViewController" customModule="Snapagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rUl-t9-NKW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Osf-tb-RSm">
+                                <rect key="frame" x="82" y="128" width="250" height="70"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="lib-ut-N1c"/>
+                                    <constraint firstAttribute="height" constant="70" id="qup-2L-uaX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="from Camera  📸">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJc-Ir-72S">
+                                <rect key="frame" x="82" y="218" width="250" height="70"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="9I5-rT-125"/>
+                                    <constraint firstAttribute="height" constant="70" id="XE7-dA-JZc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="from Photos  🌠">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="albumBtnPressed:" destination="qJC-UZ-mXh" eventType="touchUpInside" id="Mz2-O6-xBw"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fbc-jg-jEI">
+                                <rect key="frame" x="57" y="338" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="3Hf-IH-VtP"/>
+                                    <constraint firstAttribute="width" constant="300" id="iXC-93-vvn"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Osf-tb-RSm" firstAttribute="top" secondItem="OBZ-bv-j3x" secondAttribute="top" constant="40" id="7rj-IX-yiT"/>
+                            <constraint firstItem="fbc-jg-jEI" firstAttribute="leading" secondItem="OBZ-bv-j3x" secondAttribute="leading" constant="57" id="P3n-qJ-VHa"/>
+                            <constraint firstItem="OBZ-bv-j3x" firstAttribute="trailing" secondItem="dJc-Ir-72S" secondAttribute="trailing" constant="82" id="Pkd-fO-E09"/>
+                            <constraint firstItem="OBZ-bv-j3x" firstAttribute="trailing" secondItem="fbc-jg-jEI" secondAttribute="trailing" constant="57" id="X9f-11-87P"/>
+                            <constraint firstItem="fbc-jg-jEI" firstAttribute="top" secondItem="dJc-Ir-72S" secondAttribute="bottom" constant="50" id="k9u-e4-ELt"/>
+                            <constraint firstItem="dJc-Ir-72S" firstAttribute="top" secondItem="Osf-tb-RSm" secondAttribute="bottom" constant="20" id="ld7-W9-axK"/>
+                            <constraint firstItem="Osf-tb-RSm" firstAttribute="leading" secondItem="OBZ-bv-j3x" secondAttribute="leading" constant="82" id="pZt-9m-gYW"/>
+                            <constraint firstItem="dJc-Ir-72S" firstAttribute="leading" secondItem="OBZ-bv-j3x" secondAttribute="leading" constant="82" id="rx8-Si-eWm"/>
+                            <constraint firstItem="OBZ-bv-j3x" firstAttribute="trailing" secondItem="Osf-tb-RSm" secondAttribute="trailing" constant="82" id="s3v-Dp-MAn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OBZ-bv-j3x"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Snap" image="bolt.fill" catalog="system" id="K6k-uS-Vy4"/>
+                    <connections>
+                        <outlet property="selectedImage" destination="fbc-jg-jEI" id="wgF-mQ-9zl"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fub-9A-ORI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1021.7391304347827" y="214.95535714285714"/>
         </scene>
