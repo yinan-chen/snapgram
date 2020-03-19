@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		30438F0F24197A0A003FEBEF /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30438F0E24197A0A003FEBEF /* CameraViewController.swift */; };
 		4B8EA70724234141000A5529 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8EA70624234141000A5529 /* PostViewController.swift */; };
+		4B8EA70924242A45000A5529 /* PostViewThreadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8EA70824242A45000A5529 /* PostViewThreadCollectionViewCell.swift */; };
 		A238124F2415A9EF008E0F6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A238124E2415A9EF008E0F6C /* AppDelegate.swift */; };
 		A23812512415A9EF008E0F6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23812502415A9EF008E0F6C /* SceneDelegate.swift */; };
 		A23812562415A9EF008E0F6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A23812542415A9EF008E0F6C /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		30438F0E24197A0A003FEBEF /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		4B8EA70624234141000A5529 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		4B8EA70824242A45000A5529 /* PostViewThreadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewThreadCollectionViewCell.swift; sourceTree = "<group>"; };
 		A238124B2415A9EF008E0F6C /* Snapagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A238124E2415A9EF008E0F6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A23812502415A9EF008E0F6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				A23812672415AF20008E0F6C /* ThreadCollectionViewCell.swift */,
 				A23812692415AF8D008E0F6C /* PostTableViewCell.swift */,
 				B01E353424185924009CB7A2 /* ChooseThreadCollectionViewCell.swift */,
+				4B8EA70824242A45000A5529 /* PostViewThreadCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A23812682415AF20008E0F6C /* ThreadCollectionViewCell.swift in Sources */,
+				4B8EA70924242A45000A5529 /* PostViewThreadCollectionViewCell.swift in Sources */,
 				30438F0F24197A0A003FEBEF /* CameraViewController.swift in Sources */,
 				A238124F2415A9EF008E0F6C /* AppDelegate.swift in Sources */,
 				B01E353524185924009CB7A2 /* ChooseThreadCollectionViewCell.swift in Sources */,

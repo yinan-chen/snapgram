@@ -400,28 +400,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rmM-FY-fp3" userLabel="Thread Collection View">
-                                <rect key="frame" x="20" y="383" width="374" height="100"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rmM-FY-fp3" userLabel="Thread Collection View">
+                                <rect key="frame" x="20" y="383" width="374" height="120"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Kpf-KZ-zsj"/>
+                                    <constraint firstAttribute="height" constant="120" id="Kpf-KZ-zsj"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mbv-ri-JP4">
-                                    <size key="itemSize" width="126" height="119"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mbv-ri-JP4">
+                                    <size key="itemSize" width="110" height="110"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="t19-I9-62N">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="postViewThreadCell" id="t19-I9-62N" customClass="PostViewThreadCollectionViewCell" customModule="Snapagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="5" width="110" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="V12-GG-u5n">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😂" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBf-o5-cIn">
-                                                    <rect key="frame" x="11.5" y="1.5" width="67.5" height="67.5"/>
+                                                    <rect key="frame" x="14" y="4" width="82.5" height="82.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="bBf-o5-cIn" secondAttribute="height" multiplier="1:1" id="AXS-c1-I8A"/>
                                                     </constraints>
@@ -430,7 +430,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="memes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13z-P4-N8z">
-                                                    <rect key="frame" x="17" y="69" width="56" height="21"/>
+                                                    <rect key="frame" x="27" y="86.5" width="56" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -444,12 +444,16 @@
                                                 <constraint firstItem="bBf-o5-cIn" firstAttribute="width" secondItem="V12-GG-u5n" secondAttribute="width" multiplier="0.75" id="ahv-5E-XVh"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="90" height="90"/>
+                                        <size key="customSize" width="110" height="110"/>
+                                        <connections>
+                                            <outlet property="emojiLabel" destination="bBf-o5-cIn" id="cZS-mY-NZM"/>
+                                            <outlet property="nameLabel" destination="13z-P4-N8z" id="grl-Y5-uZc"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcM-aS-YkE">
-                                <rect key="frame" x="107" y="498" width="200" height="40"/>
+                                <rect key="frame" x="107" y="518" width="200" height="40"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="I14-93-Lgc"/>
@@ -466,13 +470,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to Posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOR-mZ-b1z">
-                                <rect key="frame" x="20" y="578" width="92" height="30"/>
+                                <rect key="frame" x="20" y="598" width="92" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="   Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EdU-S5-ier">
-                                <rect key="frame" x="20" y="623" width="374" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="  Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EdU-S5-ier">
+                                <rect key="frame" x="20" y="643" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="v8m-1a-GC3"/>
                                 </constraints>
@@ -480,7 +484,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="  Caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jds-no-RPY">
-                                <rect key="frame" x="20" y="672" width="374" height="34"/>
+                                <rect key="frame" x="20" y="692" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="5BB-we-PHC"/>
                                 </constraints>
@@ -488,7 +492,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23c-JC-90C">
-                                <rect key="frame" x="107" y="736" width="200" height="40"/>
+                                <rect key="frame" x="107" y="756" width="200" height="40"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Ndb-hx-InE"/>
@@ -511,7 +515,6 @@
                             <constraint firstItem="gda-kL-4Vl" firstAttribute="top" secondItem="n7y-fP-BFZ" secondAttribute="top" constant="30" id="46g-L1-LVn"/>
                             <constraint firstItem="WOR-mZ-b1z" firstAttribute="leading" secondItem="n7y-fP-BFZ" secondAttribute="leading" constant="20" id="6ar-YG-9qG"/>
                             <constraint firstItem="n7y-fP-BFZ" firstAttribute="trailing" secondItem="rmM-FY-fp3" secondAttribute="trailing" constant="20" id="9fe-Pz-rip"/>
-                            <constraint firstItem="rmM-FY-fp3" firstAttribute="centerX" secondItem="n7y-fP-BFZ" secondAttribute="centerX" id="D1e-Vy-wTv"/>
                             <constraint firstItem="n7y-fP-BFZ" firstAttribute="trailing" secondItem="gda-kL-4Vl" secondAttribute="trailing" constant="107" id="FCc-48-hJK"/>
                             <constraint firstItem="L2q-PX-lqO" firstAttribute="top" secondItem="gda-kL-4Vl" secondAttribute="bottom" constant="30" id="HEO-4O-ZMq"/>
                             <constraint firstItem="rmM-FY-fp3" firstAttribute="leading" secondItem="n7y-fP-BFZ" secondAttribute="leading" constant="20" id="MfR-dI-maF"/>
@@ -532,6 +535,7 @@
                     <navigationItem key="navigationItem" id="dno-Pa-ep9"/>
                     <connections>
                         <outlet property="postImgView" destination="gda-kL-4Vl" id="un3-AW-pSs"/>
+                        <outlet property="threadCollectionView" destination="rmM-FY-fp3" id="VtJ-3b-sQn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEW-m4-B0q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
