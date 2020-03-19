@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30438F0F24197A0A003FEBEF /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30438F0E24197A0A003FEBEF /* CameraViewController.swift */; };
+		4B8EA70724234141000A5529 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8EA70624234141000A5529 /* PostViewController.swift */; };
 		A238124F2415A9EF008E0F6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A238124E2415A9EF008E0F6C /* AppDelegate.swift */; };
 		A23812512415A9EF008E0F6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23812502415A9EF008E0F6C /* SceneDelegate.swift */; };
 		A23812562415A9EF008E0F6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A23812542415A9EF008E0F6C /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		30438F0E24197A0A003FEBEF /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		4B8EA70624234141000A5529 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		A238124B2415A9EF008E0F6C /* Snapagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A238124E2415A9EF008E0F6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A23812502415A9EF008E0F6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				30438F0E24197A0A003FEBEF /* CameraViewController.swift */,
+				4B8EA70624234141000A5529 /* PostViewController.swift */,
 			);
 			path = "Snap Tab";
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				A23812632415AE8E008E0F6C /* FeedViewController.swift in Sources */,
 				A23812512415A9EF008E0F6C /* SceneDelegate.swift in Sources */,
 				A238126C2415AFAB008E0F6C /* Constants.swift in Sources */,
+				4B8EA70724234141000A5529 /* PostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

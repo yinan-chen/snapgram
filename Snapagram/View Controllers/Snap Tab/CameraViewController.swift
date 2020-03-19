@@ -11,26 +11,40 @@ import UIKit
 class CameraViewController: UIViewController {
 
     @IBOutlet weak var selectedImage: UIImageView!
+    @IBOutlet weak var postBtn: UIButton!
+    
     var imagePickerController: UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.cameraImagePicker = UIImagePickerController()
-//        self.cameraImagePicker.delegate = self
-//        self.cameraImagePicker.sourceType = .camera
-        
         self.imagePickerController = UIImagePickerController()
         self.imagePickerController.delegate = self
-        self.imagePickerController.sourceType = .photoLibrary
-
-        // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let _ = selectedImage.image{
+            postBtn.isHidden = false
+        }else{
+            postBtn.isHidden = true
+        }
+    }
+    
+    @IBAction func cameraBtnPressed(_ sender: Any) {
+        self.imagePickerController.sourceType = .camera
+        
+        present(imagePickerController,animated: true){
+            print("Camera Image Picker Presented")
+            self.postBtn.isHidden = false
+        }
+    }
     
     @IBAction func albumBtnPressed(_ sender: Any) {
+        self.imagePickerController.sourceType = .photoLibrary
+        
         present(imagePickerController,animated: true){
             print("Album Image Picker Presented")
+            self.postBtn.isHidden = false
         }
     }
 }

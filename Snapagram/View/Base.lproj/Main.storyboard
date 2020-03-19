@@ -273,6 +273,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cameraBtnPressed:" destination="qJC-UZ-mXh" eventType="touchUpInside" id="hic-bK-mmF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJc-Ir-72S">
                                 <rect key="frame" x="82" y="218" width="250" height="70"/>
@@ -301,6 +304,17 @@
                                     <constraint firstAttribute="width" constant="300" id="iXC-93-vvn"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FER-NV-NyJ">
+                                <rect key="frame" x="147" y="668" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="ICx-ct-KR4"/>
+                                    <constraint firstAttribute="height" constant="120" id="QUQ-Sb-oXL"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="snapagram_logo"/>
+                                <connections>
+                                    <segue destination="IvR-8I-mDP" kind="show" identifier="postView" id="hsO-yz-tYH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -308,16 +322,20 @@
                             <constraint firstItem="fbc-jg-jEI" firstAttribute="leading" secondItem="OBZ-bv-j3x" secondAttribute="leading" constant="57" id="P3n-qJ-VHa"/>
                             <constraint firstItem="OBZ-bv-j3x" firstAttribute="trailing" secondItem="dJc-Ir-72S" secondAttribute="trailing" constant="82" id="Pkd-fO-E09"/>
                             <constraint firstItem="OBZ-bv-j3x" firstAttribute="trailing" secondItem="fbc-jg-jEI" secondAttribute="trailing" constant="57" id="X9f-11-87P"/>
+                            <constraint firstItem="FER-NV-NyJ" firstAttribute="top" secondItem="fbc-jg-jEI" secondAttribute="bottom" constant="30" id="k8A-Jk-yDD"/>
                             <constraint firstItem="fbc-jg-jEI" firstAttribute="top" secondItem="dJc-Ir-72S" secondAttribute="bottom" constant="50" id="k9u-e4-ELt"/>
                             <constraint firstItem="dJc-Ir-72S" firstAttribute="top" secondItem="Osf-tb-RSm" secondAttribute="bottom" constant="20" id="ld7-W9-axK"/>
                             <constraint firstItem="Osf-tb-RSm" firstAttribute="leading" secondItem="OBZ-bv-j3x" secondAttribute="leading" constant="82" id="pZt-9m-gYW"/>
+                            <constraint firstItem="OBZ-bv-j3x" firstAttribute="trailing" secondItem="FER-NV-NyJ" secondAttribute="trailing" constant="147" id="pdS-cu-8bj"/>
                             <constraint firstItem="dJc-Ir-72S" firstAttribute="leading" secondItem="OBZ-bv-j3x" secondAttribute="leading" constant="82" id="rx8-Si-eWm"/>
                             <constraint firstItem="OBZ-bv-j3x" firstAttribute="trailing" secondItem="Osf-tb-RSm" secondAttribute="trailing" constant="82" id="s3v-Dp-MAn"/>
+                            <constraint firstItem="FER-NV-NyJ" firstAttribute="leading" secondItem="OBZ-bv-j3x" secondAttribute="leading" constant="147" id="x4r-Y2-9Nk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OBZ-bv-j3x"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Snap" image="bolt.fill" catalog="system" id="K6k-uS-Vy4"/>
                     <connections>
+                        <outlet property="postBtn" destination="FER-NV-NyJ" id="KcL-TV-ORx"/>
                         <outlet property="selectedImage" destination="fbc-jg-jEI" id="wgF-mQ-9zl"/>
                     </connections>
                 </viewController>
@@ -360,10 +378,50 @@
             </objects>
             <point key="canvasLocation" x="-58" y="215"/>
         </scene>
+        <!--Post View Controller-->
+        <scene sceneID="nbA-Ir-h7J">
+            <objects>
+                <viewController id="IvR-8I-mDP" customClass="PostViewController" customModule="Snapagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z5h-lB-UK8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gda-kL-4Vl">
+                                <rect key="frame" x="107" y="118" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="4ub-5H-Vtu"/>
+                                    <constraint firstAttribute="height" constant="200" id="f56-wn-aUG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to Threads" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2q-PX-lqO">
+                                <rect key="frame" x="20" y="348" width="122" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="L2q-PX-lqO" firstAttribute="leading" secondItem="n7y-fP-BFZ" secondAttribute="leading" constant="20" id="2Gw-7R-YF4"/>
+                            <constraint firstItem="gda-kL-4Vl" firstAttribute="top" secondItem="n7y-fP-BFZ" secondAttribute="top" constant="30" id="46g-L1-LVn"/>
+                            <constraint firstItem="n7y-fP-BFZ" firstAttribute="trailing" secondItem="gda-kL-4Vl" secondAttribute="trailing" constant="107" id="FCc-48-hJK"/>
+                            <constraint firstItem="L2q-PX-lqO" firstAttribute="top" secondItem="gda-kL-4Vl" secondAttribute="bottom" constant="30" id="HEO-4O-ZMq"/>
+                            <constraint firstItem="gda-kL-4Vl" firstAttribute="leading" secondItem="n7y-fP-BFZ" secondAttribute="leading" constant="107" id="Qhm-Vs-e7t"/>
+                            <constraint firstItem="n7y-fP-BFZ" firstAttribute="trailing" secondItem="L2q-PX-lqO" secondAttribute="trailing" constant="272" id="fM4-PD-4kT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n7y-fP-BFZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dno-Pa-ep9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rEW-m4-B0q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1801" y="215"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bolt.fill" catalog="system" width="50" height="64"/>
         <image name="circle.grid.hex.fill" catalog="system" width="64" height="56"/>
         <image name="skyline" width="800" height="533"/>
+        <image name="snapagram_logo" width="1063" height="1063"/>
     </resources>
 </document>
