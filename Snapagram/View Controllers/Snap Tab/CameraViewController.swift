@@ -47,6 +47,17 @@ class CameraViewController: UIViewController {
             self.postBtn.isHidden = false
         }
     }
+    
+    @IBAction func postBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toPostView", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? PostViewController{
+            dest.postImg = selectedImage.image
+        }
+    }
+    
 }
 
 extension CameraViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{

@@ -10,10 +10,14 @@ import UIKit
 
 class PostViewController: UIViewController {
 
+    @IBOutlet weak var postImgView: UIImageView!
+    var postImg: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //load img transferred from segue
+        postImgView.image = postImg
     }
     
 

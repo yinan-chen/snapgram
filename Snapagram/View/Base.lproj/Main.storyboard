@@ -312,7 +312,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="snapagram_logo"/>
                                 <connections>
-                                    <segue destination="IvR-8I-mDP" kind="show" identifier="postView" id="hsO-yz-tYH"/>
+                                    <action selector="postBtnPressed:" destination="qJC-UZ-mXh" eventType="touchUpInside" id="kRG-I9-oFe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -337,6 +337,7 @@
                     <connections>
                         <outlet property="postBtn" destination="FER-NV-NyJ" id="KcL-TV-ORx"/>
                         <outlet property="selectedImage" destination="fbc-jg-jEI" id="wgF-mQ-9zl"/>
+                        <segue destination="IvR-8I-mDP" kind="show" identifier="toPostView" id="thl-PK-5Oj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fub-9A-ORI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -412,6 +413,9 @@
                         <viewLayoutGuide key="safeArea" id="n7y-fP-BFZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="dno-Pa-ep9"/>
+                    <connections>
+                        <outlet property="postImgView" destination="gda-kL-4Vl" id="un3-AW-pSs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEW-m4-B0q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
