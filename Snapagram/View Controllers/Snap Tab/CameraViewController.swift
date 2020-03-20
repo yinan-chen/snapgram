@@ -50,6 +50,8 @@ class CameraViewController: UIViewController {
     
     @IBAction func postBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toPostView", sender: nil)
+        selectedImage.image = nil
+        postBtn.isHidden = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
