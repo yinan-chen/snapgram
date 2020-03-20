@@ -540,6 +540,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="dno-Pa-ep9"/>
                     <connections>
+                        <outlet property="captionField" destination="jds-no-RPY" id="pLr-YM-h92"/>
+                        <outlet property="locationField" destination="EdU-S5-ier" id="hOa-dD-jJC"/>
                         <outlet property="postImgView" destination="gda-kL-4Vl" id="un3-AW-pSs"/>
                         <outlet property="threadCollectionView" destination="rmM-FY-fp3" id="VtJ-3b-sQn"/>
                     </connections>
