@@ -21,6 +21,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
         postTableView.delegate = self
         postTableView.dataSource = self
+        feed.fetchThread()
     }
     
     override func viewWillAppear(_ animated: Bool) {

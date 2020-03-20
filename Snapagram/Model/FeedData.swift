@@ -29,7 +29,8 @@ class Thread {
     func addEntry(threadEntry: ThreadEntry) {
         entries.append(threadEntry)
         let imageID = UUID.init().uuidString
-        let user = threadEntry.username
+        let sender = threadEntry.username
+        let receiver = self.name
         
         let storageRef = storage.reference(withPath: "threadEntry/\(imageID).jpg")
         guard let imageData = threadEntry.image.jpegData(compressionQuality: 0.75) else { return }
@@ -40,7 +41,8 @@ class Thread {
         var ref: DocumentReference? = nil
         ref = db.collection("threadEntry").addDocument(data:[
             "imageID": imageID,
-            "user": user]) { err in
+            "sender": sender,
+            "receiver": receiver]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
             } else {
@@ -48,35 +50,6 @@ class Thread {
             }
         }
         
-    }
-    
-    func fetch() {
-        db.collection("threadEntry").getDocuments(){ (threadEntries, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                
-                var username: String
-                var imageID: String
-                
-                for document in threadEntries!.documents {
-                    imageID = document.data()["imageID"] as! String
-                    username = document.data()["user"] as! String
-                    
-                    let storageRef = storage.reference(withPath: "threadEntry/\(imageID).jpg")
-                    
-                    storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
-                        if error != nil {
-                            print("error")
-                        }
-                        if let data = data {
-                            let image = UIImage(data: data)
-                            self.entries.append(ThreadEntry(username: username, image: image!))
-                        }
-                    }
-                }
-            }
-        }
     }
     
     func removeFirstEntry() -> ThreadEntry? {
@@ -128,6 +101,41 @@ class FeedData {
         for thread in threads {
             let entry = ThreadEntry(username: self.username, image: UIImage(named: "garbers")!)
             thread.entries.append(entry)
+        }
+    }
+    
+    func fetchThread() {
+        db.collection("threadEntry").getDocuments(){ (threadEntries, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                
+                var receiver: String
+                var imageID: String
+                var sender: String
+                
+                for document in threadEntries!.documents {
+                    imageID = document.data()["imageID"] as! String
+                    receiver = document.data()["receiver"] as! String
+                    sender = document.data()["sender"] as! String
+                    
+                    let storageRef = storage.reference(withPath: "threadEntry/\(imageID).jpg")
+                    
+                    storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
+                        if error != nil {
+                            print("error")
+                        }
+                        if let data = data {
+                            let image = UIImage(data: data)
+                            for thread in self.threads {
+                                if thread.name == receiver {
+                                    thread.entries.append(ThreadEntry(username: sender, image: image!))
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     

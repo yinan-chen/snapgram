@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>136169756315-vrosn01b5opcuvqikr9gof4nfh66ingi.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.136169756315-vrosn01b5opcuvqikr9gof4nfh66ingi</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBmq_fUeLUZTI1B2bi5BnLtPxqOUa8hRrU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>136169756315</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.yinan.Snapagram</string>
+	<key>PROJECT_ID</key>
+	<string>snapagram-f3278</string>
+	<key>STORAGE_BUCKET</key>
+	<string>snapagram-f3278.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:136169756315:ios:a3b648ed617c01f009583e</string>
+	<key>DATABASE_URL</key>
+	<string>https://snapagram-f3278.firebaseio.com</string>
+</dict>
+</plist>
