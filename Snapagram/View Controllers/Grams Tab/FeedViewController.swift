@@ -15,13 +15,16 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         threadCollectionView.delegate = self
         threadCollectionView.dataSource = self
 
         postTableView.delegate = self
         postTableView.dataSource = self
-        feed.fetchThread()
+        
+        //Firebase content
+        fetchThread()
+        fetchPost()
     }
     
     override func viewWillAppear(_ animated: Bool) {

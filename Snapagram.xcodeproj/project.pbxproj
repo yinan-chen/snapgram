@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		30438F0F24197A0A003FEBEF /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30438F0E24197A0A003FEBEF /* CameraViewController.swift */; };
 		3CA9B0FF41DABE135282419F /* Pods_Snapagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D0A5A7240B9EDFC957D8BB /* Pods_Snapagram.framework */; };
+		4B0C522F242575D700A06F6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B0C522E242575D700A06F6C /* GoogleService-Info.plist */; };
 		4B8EA70724234141000A5529 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8EA70624234141000A5529 /* PostViewController.swift */; };
 		4B8EA70924242A45000A5529 /* PostViewThreadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8EA70824242A45000A5529 /* PostViewThreadCollectionViewCell.swift */; };
-		4BDFA4EC242476F600562F93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFA4EB242476F600562F93 /* GoogleService-Info.plist */; };
 		A238124F2415A9EF008E0F6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A238124E2415A9EF008E0F6C /* AppDelegate.swift */; };
 		A23812512415A9EF008E0F6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23812502415A9EF008E0F6C /* SceneDelegate.swift */; };
 		A23812562415A9EF008E0F6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A23812542415A9EF008E0F6C /* Main.storyboard */; };
@@ -29,10 +29,9 @@
 /* Begin PBXFileReference section */
 		30438F0E24197A0A003FEBEF /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		38D0A5A7240B9EDFC957D8BB /* Pods_Snapagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snapagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B0C522E242575D700A06F6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4B8EA70624234141000A5529 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		4B8EA70824242A45000A5529 /* PostViewThreadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewThreadCollectionViewCell.swift; sourceTree = "<group>"; };
-		4BDFA4EB242476F600562F93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4BDFA4ED242491B100562F93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A238124B2415A9EF008E0F6C /* Snapagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A238124E2415A9EF008E0F6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A23812502415A9EF008E0F6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +100,6 @@
 		A23812422415A9EF008E0F6C = {
 			isa = PBXGroup;
 			children = (
-				4BDFA4EB242476F600562F93 /* GoogleService-Info.plist */,
 				A238124D2415A9EF008E0F6C /* Snapagram */,
 				A238124C2415A9EF008E0F6C /* Products */,
 				6AAEDEDD3504C763FFF2DAEF /* Pods */,
@@ -120,7 +118,7 @@
 		A238124D2415A9EF008E0F6C /* Snapagram */ = {
 			isa = PBXGroup;
 			children = (
-				4BDFA4ED242491B100562F93 /* GoogleService-Info.plist */,
+				4B0C522E242575D700A06F6C /* GoogleService-Info.plist */,
 				A238124E2415A9EF008E0F6C /* AppDelegate.swift */,
 				A23812502415A9EF008E0F6C /* SceneDelegate.swift */,
 				A23812662415AEDA008E0F6C /* Model */,
@@ -224,7 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A238125B2415A9F5008E0F6C /* LaunchScreen.storyboard in Resources */,
-				4BDFA4EC242476F600562F93 /* GoogleService-Info.plist in Resources */,
+				4B0C522F242575D700A06F6C /* GoogleService-Info.plist in Resources */,
 				A23812582415A9F5008E0F6C /* Assets.xcassets in Resources */,
 				A23812562415A9EF008E0F6C /* Main.storyboard in Resources */,
 			);

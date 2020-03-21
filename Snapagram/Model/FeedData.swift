@@ -29,8 +29,7 @@ class Thread {
     func addEntry(threadEntry: ThreadEntry) {
         entries.append(threadEntry)
         let imageID = UUID.init().uuidString
-        let sender = threadEntry.username
-        let receiver = self.name
+        let threadName = self.name
         
         let storageRef = storage.reference(withPath: "threadEntry/\(imageID).jpg")
         guard let imageData = threadEntry.image.jpegData(compressionQuality: 0.75) else { return }
@@ -41,8 +40,8 @@ class Thread {
         var ref: DocumentReference? = nil
         ref = db.collection("threadEntry").addDocument(data:[
             "imageID": imageID,
-            "sender": sender,
-            "receiver": receiver]) { err in
+            "threadName": threadName])
+        { err in
             if let err = err {
                 print("Error adding document: \(err)")
             } else {
@@ -104,41 +103,6 @@ class FeedData {
         }
     }
     
-    func fetchThread() {
-        db.collection("threadEntry").getDocuments(){ (threadEntries, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                
-                var receiver: String
-                var imageID: String
-                var sender: String
-                
-                for document in threadEntries!.documents {
-                    imageID = document.data()["imageID"] as! String
-                    receiver = document.data()["receiver"] as! String
-                    sender = document.data()["sender"] as! String
-                    
-                    let storageRef = storage.reference(withPath: "threadEntry/\(imageID).jpg")
-                    
-                    storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
-                        if error != nil {
-                            print("error")
-                        }
-                        if let data = data {
-                            let image = UIImage(data: data)
-                            for thread in self.threads {
-                                if thread.name == receiver {
-                                    thread.entries.append(ThreadEntry(username: sender, image: image!))
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
     func addPost(post: Post) {
         posts.append(post)
         let location = post.location
@@ -174,4 +138,65 @@ class FeedData {
     }
 }
 
-// write firebase functions here (pushing, pulling, etc.) 
+// write firebase functions here (pushing, pulling, etc.)
+func fetchThread() {
+    db.collection("threadEntry").getDocuments(){ (threadEntries, err) in
+        if let err = err {
+            print("Error getting documents: \(err)")
+        } else {
+            for document in threadEntries!.documents {
+                let imageID = document.data()["imageID"] as! String
+                let threadName = document.data()["threadName"] as! String
+                
+                let storageRef = storage.reference(withPath: "threadEntry/\(imageID).jpg")
+                
+                storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
+                    if error != nil {
+                        print("error")
+                    }else{
+                        if let data = data {
+                            let image = UIImage(data: data)
+                            for thread in feed.threads {
+                                if thread.name == threadName {
+                                    thread.entries.append(ThreadEntry(username: feed.username, image: image!))
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            print("Finish Add ThreadEntry fomr Firebase")
+        }
+    }
+}
+
+func fetchPost(){
+    db.collection("post").getDocuments(){ (posts, err) in
+        if let err = err {
+            print("Error getting documents: \(err)")
+        } else {
+            for document in posts!.documents {
+                let location = document.data()["location"] as! String
+                let imageID = document.data()["imageID"] as! String
+                let user = document.data()["user"] as! String
+                let caption = document.data()["caption"] as! String
+                let timestamp = document.data()["date"] as! Timestamp
+                
+                let date = Date(timeIntervalSince1970: TimeInterval(timestamp.seconds))
+                let storageRef = storage.reference(withPath: "post/\(imageID).jpg")
+                
+                storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
+                    if error != nil {
+                        print("error")
+                    }else{
+                        if let data = data {
+                            let image = UIImage(data: data)
+                            feed.posts.append(Post(location: location, image: image, user: user, caption: caption, date: date))
+                        }
+                    }
+                }
+            }
+             print("Finish Add Post fomr Firebase")
+        }
+    }
+}
